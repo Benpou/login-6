@@ -1,0 +1,33 @@
+{
+  "name": "login-6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benpou/login-6.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benpou/login-6/issues"
+  },
+  "homepage": "https://github.com/Benpou/login-6#readme",
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "express-handlebars": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "express-messages": "*",
+    "connect-flash": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
+    "bcrypt": "*"
+  }
+}
