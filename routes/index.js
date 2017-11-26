@@ -1,10 +1,19 @@
 const express = require('express');
 const router = express.Router();
 
+// Bring the model
+let User = require('../models/user');
+
 // Home page
 router.get('/', (req, res, next) => {
   res.render('index');
 });
+
+// Login form
+router.get('/login', (req, res, next) => {
+  res.render('login');
+});
+
 
 // Register form
 router.get('/register', (req, res, next) => {
@@ -34,10 +43,19 @@ router.post('/register', (req, res, next) => {
       errors: errors
     });
   } else {
-    console.log('Success');
-    return;
+    const newUser = new User({
+      name: name,
+      username: username,
+      email: email,
+      password: password
+    });
+    
+    User.registerUser(newUser, (err, user) => {
+      if (err) throw err;
+      req.flash('success_msg', 'You are registerd');
+      res.redirect('/login');
+    });
   }
-  //res.render('register');
 });
 
 

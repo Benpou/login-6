@@ -17,17 +17,18 @@
   },
   "homepage": "https://github.com/Benpou/login-6#readme",
   "dependencies": {
-    "express": "*",
+    "bcrypt": "*",
+    "bcryptjs": "^2.4.3",
     "body-parser": "*",
+    "connect-flash": "*",
+    "express": "*",
     "express-handlebars": "*",
+    "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
-    "express-messages": "*",
-    "connect-flash": "*",
     "mongoose": "*",
     "passport": "*",
     "passport-http": "*",
-    "passport-local": "*",
-    "bcrypt": "*"
+    "passport-local": "*"
   }
 }
