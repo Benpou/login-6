@@ -31,12 +31,19 @@ app.use(session({
   resave: true
 }));
 
+
+// Init passport
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Express messages
 app.use(flash());
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
-  
+  res.locals.error = req.flash('error');
+  // By setting this part, you can have access to the user name after login
+  res.locals.user = req.user || null;
   // To call the next middleware
   next();
 });

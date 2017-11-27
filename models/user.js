@@ -39,3 +39,26 @@ module.exports.registerUser = function (newUser, callback){
     });
   });
 }
+
+// getUserByUsername
+module.exports.getUserByUsername = function (username, callback) {
+  const query = {username: username}
+  User.findOne(query, callback);
+}
+
+/* comparePassword
+   @ candidatePassword is user password
+   @ hash is password in db
+*/
+module.exports.comparePassword = function(candidatePassword, hash, callback){
+  bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
+    if(err) throw err;
+    callback(null, isMatch);
+  });
+}
+
+
+// getUserById
+module.exports.getUserById = function (id, callback) {
+  User.findById(id, callback);
+}
